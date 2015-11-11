@@ -56,6 +56,7 @@
             <div class="alert alert-info" role="alert" ng-show="loading">{{ loading }} </div>
             <div class="alert alert-warning" role="alert" ng-show="SearchTermItem&&!loading&&!dataSource.pagesAvailable&&!dataSource.messagesAvailable">There are no validated guides, feel free to post the question</div>
             <div class="alert alert-success" role="alert" ng-show="submitting">{{ submitting }}</div>
+            <div class="alert alert-danger" role="alert" ng-show="error">{{ error }}</div>
         </div>
 
         <div class="container" ng-show="dataSource.pagesAvailable">

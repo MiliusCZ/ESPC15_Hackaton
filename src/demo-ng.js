@@ -6,6 +6,7 @@ this.app.controller('myCtrl', function ($scope, $q) {
 
     $scope.submitting = false;
     $scope.loading = false;
+    $scope.error = false;
     $scope.searchTerm = '';
     $scope.dataSource = {
         messages: new Array(),
@@ -25,7 +26,10 @@ this.app.controller('myCtrl', function ($scope, $q) {
 
     $scope.search = function () {
         if ($scope.searchTerm == '') {
-            $sope.loading = false;
+            $scope.loading = false;
+            $scope.dataSource.pages = new Array();
+            $scope.dataSource.pagesAvailable = 0;
+            $scope.$apply();
             return;
         }
 
@@ -73,12 +77,22 @@ this.app.controller('myCtrl', function ($scope, $q) {
                         loadDeferred.resolve(resultData);
                     },
                     error: function (user) {
-                        alert("There was an error with the request.");
+                        $scope.loading = false;
+                        $scope.error = "There was an error with the request.";
+                        setTimeout(function () {
+                            $scope.error = false;
+                            $scope.$apply();
+                        }, 2000);
                     }
                 });
             }
             else {
-                alert("not logged in")
+                $scope.loading = false;
+                $scope.error = "Please log in";
+                setTimeout(function () {
+                    $scope.error = false;
+                    $scope.$apply();
+                }, 2000);
             }
         }
         );
@@ -115,12 +129,22 @@ this.app.controller('myCtrl', function ($scope, $q) {
                             loadDeferred.resolve();
                         },
                         error: function (user) {
-                            alert("There was an error posting your question.");
+                            $scope.loading = false;
+                            $scope.error = "There was an error posting your question.";
+                            setTimeout(function () {
+                                $scope.error = false;
+                                $scope.$apply();
+                            }, 2000);
                         }
                     });
                 }
                 else {
-                    alert("not logged in")
+                    $scope.loading = false;
+                    $scope.error = "Please log in";
+                    setTimeout(function () {
+                        $scope.error = false;
+                        $scope.$apply();
+                    }, 2000);
                 }
             });
         }
