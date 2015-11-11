@@ -22,7 +22,7 @@
     <div ng-app="myApp" ng-controller="myCtrl">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-                <div class="navbar-header">
+                <div class="navbar-header hidden-xs">
                     <a class="navbar-brand" href="#">Goomer;)
                     </a>
                 </div>
@@ -40,7 +40,7 @@
             </div>
         </nav>
         <div class="page-header text-center">
-            <h1>Goomer;) <small>A Google-like Yammer knowledge search</small></h1>
+            <h1><span style="color:#2196F3">G</span><span style="color:#FF5722">o</span><span style="color:#FFAB00">o</span><span style="color:#2196F3">mer;)</span> <small class="hidden-sm hidden-xs">A Google-like Yammer knowledge search</small></h1>
         </div>
         <div class="container">
             <div class="jumbotron text-center">
