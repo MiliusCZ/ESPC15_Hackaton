@@ -23,3 +23,4 @@ Then use the Login to Yammer button and you are good to go ;)
 - Communcation with Yammer API (search.json - GET and messages.json - POST)
 - Performance throttling to avoid reaching API limits
 - Asynchronous calls
+- Responsive design - application works well also on tablets and mobile phones
