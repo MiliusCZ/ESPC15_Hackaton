@@ -96,6 +96,7 @@ this.app.controller('myCtrl', function ($scope, $q) {
                 $scope.SearchTermItem = "";
                 setTimeout(function () {
                     $scope.submitting = false;
+                    $scope.$apply();
                 }, 1000);
             });
 
